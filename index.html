@@ -27,10 +27,8 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Pretendard',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:15px}
 a{color:inherit;text-decoration:none}
-
 .page{max-width:780px;margin:0 auto;padding:3rem 2rem 6rem}
 
-/* 헤더 */
 .header-card{background:var(--bg2);border-radius:var(--radius-lg);border:0.5px solid var(--border);padding:2rem 2rem 1.75rem;margin-bottom:2rem}
 .header-top{display:flex;align-items:center;gap:16px;margin-bottom:1rem}
 .avatar{width:52px;height:52px;border-radius:50%;background:var(--teal-bg);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:600;color:var(--teal-text);flex-shrink:0;letter-spacing:.02em}
@@ -50,26 +48,17 @@ a{color:inherit;text-decoration:none}
 .contact a{color:var(--blue-text);transition:opacity .15s}
 .contact a:hover{opacity:.7}
 
-/* 섹션 */
 .sec-label{font-size:11px;font-weight:600;color:var(--text3);letter-spacing:.07em;text-transform:uppercase;margin-bottom:.875rem;margin-top:2.25rem}
 
-/* 메트릭 */
 .metric-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
 .metric{background:var(--bg2);border-radius:var(--radius);border:0.5px solid var(--border);padding:.875rem 1rem}
 .metric-val{font-size:22px;font-weight:600;color:var(--text);margin-bottom:2px}
 .metric-lbl{font-size:11.5px;color:var(--text3)}
 
-/* 탭 */
-.tab-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:1.125rem}
-.tab{font-size:12.5px;padding:4px 14px;border-radius:20px;border:0.5px solid var(--border);color:var(--text2);cursor:pointer;transition:all .15s;background:var(--bg)}
-.tab:hover{background:var(--bg2)}
-.tab.active{background:var(--bg2);color:var(--text);font-weight:500;border-color:transparent}
-
-/* 프로젝트 그리드 */
 .proj-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.875rem}
 .proj-card{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--radius-lg);padding:1.125rem 1.25rem;transition:box-shadow .2s}
 .proj-card:hover{box-shadow:0 2px 12px rgba(0,0,0,.06)}
-.proj-tag{font-size:11.5px;color:var(--text3);margin-bottom:.35rem}
+.proj-tag{font-size:11.5px;color:var(--text3);margin-bottom:.5rem;display:flex;align-items:center;flex-wrap:wrap;gap:4px}
 .proj-title{font-size:14px;font-weight:600;margin-bottom:.5rem;line-height:1.4}
 .proj-desc{font-size:12.5px;color:var(--text2);line-height:1.65;margin-bottom:.75rem}
 .proj-results{list-style:none;margin-bottom:.75rem}
@@ -81,7 +70,6 @@ a{color:inherit;text-decoration:none}
 .dot-coral::before{background:var(--coral-text)}
 .proj-tags{display:flex;flex-wrap:wrap;gap:4px}
 
-/* PM 역할 */
 .pm-card{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem 1.5rem}
 .pm-example{font-size:12.5px;color:var(--text3);margin-bottom:1.125rem;padding-bottom:.875rem;border-bottom:0.5px solid var(--border)}
 .steps{display:flex;flex-direction:column;gap:.875rem}
@@ -90,13 +78,11 @@ a{color:inherit;text-decoration:none}
 .step-title{font-size:13px;font-weight:600;margin-bottom:2px}
 .step-desc{font-size:12.5px;color:var(--text2);line-height:1.6}
 
-/* 스킬 */
 .skill-card{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--radius-lg);padding:1.125rem 1.5rem}
 .skill-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem}
 .skill-item{font-size:13px;color:var(--text2);display:flex;align-items:center;gap:7px}
 .skill-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
 
-/* 경력 */
 .career-card{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--radius-lg);padding:1.125rem 1.5rem}
 .career-row{display:flex;justify-content:space-between;align-items:flex-start;padding:.75rem 0;border-bottom:0.5px solid var(--border)}
 .career-row:first-child{padding-top:0}
@@ -105,30 +91,25 @@ a{color:inherit;text-decoration:none}
 .career-role{font-size:12.5px;color:var(--text2)}
 .career-period{font-size:12px;color:var(--text3);text-align:right;white-space:nowrap;flex-shrink:0;margin-left:1rem}
 
-/* 프리랜서 */
 .freelance-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem}
 .fl-card{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--radius-lg);padding:1rem 1.125rem}
 .fl-title{font-size:13px;font-weight:600;margin-bottom:4px;line-height:1.4}
 .fl-desc{font-size:12px;color:var(--text2);line-height:1.6}
 
-/* 타임라인 배너 */
 .timeline-banner{background:var(--bg2);border:0.5px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem 1.5rem;margin-bottom:.75rem}
-.tl-title{font-size:13px;font-weight:600;margin-bottom:.875rem;color:var(--text2)}
 .tl-track{display:flex;flex-direction:column;gap:.5rem}
 .tl-row{display:flex;align-items:center;gap:10px;font-size:12.5px}
 .tl-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
-.tl-period{color:var(--text3);min-width:110px;flex-shrink:0}
+.tl-period{color:var(--text3);min-width:140px;flex-shrink:0}
 .tl-company{font-weight:600;min-width:130px}
 .tl-role{color:var(--text2)}
 .tl-line{width:1.5px;background:var(--border);height:18px;margin-left:4px}
 
-/* 자격증 */
 .cert-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem}
 .cert-card{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--radius-lg);padding:.875rem 1rem}
 .cert-year{font-size:11px;color:var(--text3);margin-bottom:3px}
 .cert-name{font-size:13px;font-weight:600}
 
-/* 반응형 */
 @media(max-width:600px){
   .proj-grid{grid-template-columns:1fr}
   .metric-grid{grid-template-columns:repeat(2,1fr)}
@@ -151,12 +132,13 @@ a{color:inherit;text-decoration:none}
     </div>
   </div>
   <div class="intro">
-    지난 7년간 미디어·게임 분야에서 스페인어 현지화, 7개 언어 인하우스팀의 LPM 및 콘텐츠 기획 PM을 담당한 경력이 있습니다.<br>사내 AI 번역 툴 도입 프로젝트에 직접 참여하는 등 프로세스 효율화를 주도적으로 이끌어온 PM입니다.
+    지난 7년간 미디어·게임 분야에서 스페인어 현지화, 7개 언어 인하우스팀의 LPM 및 콘텐츠 기획 PM을 담당한 경력이 있습니다.<br>
+    사내 AI 번역 툴 도입 프로젝트에 직접 참여하는 등 프로세스 효율화를 주도적으로 이끌어온 PM입니다.
   </div>
   <div class="badges">
     <span class="badge b-purple">7개 언어 LPM</span>
     <span class="badge b-teal">음원·영상·게임 현지화</span>
-    <span class="badge b-yellow">AI 번역 워크플로우 도입</span>
+    <span class="badge b-gray">AI 번역 워크플로우 도입</span>
     <span class="badge b-coral">인하우스 현지화 팀 리드</span>
     <span class="badge b-blue">유아동 콘텐츠 기획 PM</span>
     <span class="badge b-amber">스페인어 C2</span>
@@ -180,7 +162,7 @@ a{color:inherit;text-decoration:none}
     <div style="display:flex"><div style="width:4px"></div><div class="tl-line"></div></div>
     <div class="tl-row">
       <div class="tl-dot" style="background:#1D9E75"></div>
-      <div class="tl-period">2019 – 2022 (3년 3개월) </div>
+      <div class="tl-period">2019 – 2022 (3년 3개월)</div>
       <div class="tl-company">더핑크퐁컴퍼니</div>
       <div class="tl-role">콘텐츠 기획 PM · 스페인어 현지화</div>
     </div>
@@ -189,7 +171,7 @@ a{color:inherit;text-decoration:none}
       <div class="tl-dot" style="background:#7F77DD"></div>
       <div class="tl-period">2022 – 현재 (3년+)</div>
       <div class="tl-company">Devsisters</div>
-      <div class="tl-role">7개 언어 및 7종+ 게임의 인하우스 현지화 LPM · 프로세스 효율화 · 인하우스 현지화 팀 관리</div>
+      <div class="tl-role">7개 언어 · 7종+ 게임 타이틀 인하우스 현지화 LPM</div>
     </div>
     <div style="display:flex"><div style="width:4px"></div><div class="tl-line"></div></div>
     <div class="tl-row">
@@ -200,7 +182,7 @@ a{color:inherit;text-decoration:none}
     </div>
   </div>
 </div>
-  
+
 <!-- 핵심 성과 -->
 <div class="sec-label">핵심 성과</div>
 <div class="metric-grid">
@@ -209,12 +191,15 @@ a{color:inherit;text-decoration:none}
   <div class="metric"><div class="metric-val">1,000만</div><div class="metric-lbl">핑크퐁 유튜브 스페인어 채널 구독자</div></div>
   <div class="metric"><div class="metric-val">700편+</div><div class="metric-lbl">동요·동화 현지화 콘텐츠 작업량</div></div>
 </div>
-  
+
 <!-- 프로젝트 -->
+<div class="sec-label">프로젝트</div>
+<div class="proj-grid">
+
   <div class="proj-card">
     <div class="proj-tag">
       <span class="badge b-coral" style="font-size:11px">게임 스페인어 현지화</span>
-      &nbsp;Devsisters · 2022–현재
+      Devsisters · 2022–현재
     </div>
     <div class="proj-title">쿠키런: 킹덤 스페인어 현지화 — 20만 단어 · 커뮤니티 바이럴</div>
     <div class="proj-desc">한글→스페인어 현지화 및 LQA 수행. 캐릭터 특성을 살린 초월번역으로 스페인어권·영미권 커뮤니티 자발적 바이럴 달성 (reddit, X, Facebook).</div>
@@ -232,7 +217,8 @@ a{color:inherit;text-decoration:none}
   <div class="proj-card">
     <div class="proj-tag">
       <span class="badge b-purple" style="font-size:11px">인하우스 LPM</span>
-      &nbsp;Devsisters · 2022–현재</div>
+      Devsisters · 2022–현재
+    </div>
     <div class="proj-title">7개 언어 인하우스팀 운영 + AI 번역 워크플로우 전환</div>
     <div class="proj-desc">영어·스페인어·프랑스어·독일어·일본어·중국어·태국어 7개 언어 번역팀 LPM. 30명 관리. 사내 AI 번역 툴 TF 현지화 PM으로 인력 중심 공정을 AI 워크플로우로 전환.</div>
     <ul class="proj-results">
@@ -249,8 +235,8 @@ a{color:inherit;text-decoration:none}
   <div class="proj-card">
     <div class="proj-tag">
       <span class="badge b-green" style="font-size:11px">콘텐츠 기획 PM</span>
-      &nbsp;더핑크퐁컴퍼니 · 2019–2022
-</div>
+      더핑크퐁컴퍼니 · 2019–2022
+    </div>
     <div class="proj-title">스페인어 오리지널 동요 시리즈 기획 — Chumbala Cachumbala</div>
     <div class="proj-desc">스페인어권 전래동요를 재해석한 오리지널 시리즈 10편 기획·제작 PM. 스튜디오 선정, 성우 캐스팅, 녹음 디렉팅 전담.</div>
     <ul class="proj-results">
@@ -263,12 +249,12 @@ a{color:inherit;text-decoration:none}
       <span class="badge b-blue" style="font-size:11px">음원 PM</span>
     </div>
   </div>
-  
- <div class="proj-card">
+
+  <div class="proj-card">
     <div class="proj-tag">
-  <span class="badge b-green" style="font-size:11px">콘텐츠 스페인어 현지화</span>
-  &nbsp;더핑크퐁컴퍼니 · 2019–2022
-</div>
+      <span class="badge b-green" style="font-size:11px">콘텐츠 스페인어 현지화</span>
+      더핑크퐁컴퍼니 · 2019–2022
+    </div>
     <div class="proj-title">스페인어 채널 성장 전략 — 구독자 200만 → 1,000만</div>
     <div class="proj-desc">스페인어권 현지 문화를 반영한 로컬 오리지널 콘텐츠 기획·제작 총괄. 시장 조사부터 스튜디오 선정, 성우 캐스팅, 녹음 디렉팅, 포스트 프로덕션까지 전 과정 PM.</div>
     <ul class="proj-results">
@@ -325,18 +311,18 @@ a{color:inherit;text-decoration:none}
 <div class="freelance-grid">
   <div class="fl-card">
     <div class="proj-tags" style="margin-bottom:6px"><span class="badge b-coral" style="font-size:11px">Netflix</span></div>
-    <div class="fl-title">수리남 스페인어 후시 녹음 디렉팅</div>
-    <div class="fl-desc">넷플릭스 오리지널 드라마 스페인어 더빙 디렉팅. 립싱크·자막 타이밍 정밀 검수.</div>
+    <div class="fl-title">수리남 후시 녹음 디렉팅</div>
+    <div class="fl-desc">넷플릭스 오리지널 드라마 스페인어 후시 녹음 디렉팅. 립싱크·자막 타이밍 검수.</div>
   </div>
   <div class="fl-card">
     <div class="proj-tags" style="margin-bottom:6px"><span class="badge b-blue" style="font-size:11px">Disney+</span></div>
-    <div class="fl-title">나인퍼즐 스페인어 후시 녹음 디렉팅</div>
-    <div class="fl-desc">디즈니+ 오리지널 스페인어 더빙 디렉팅. 고품질 현지화 납품.</div>
+    <div class="fl-title">나인퍼즐 후시 녹음 디렉팅</div>
+    <div class="fl-desc">디즈니+ 오리지널 드라마 스페인어 후시 녹음 디렉팅. 가이드 녹음. 연기자 티칭.</div>
   </div>
   <div class="fl-card">
-    <div class="proj-tags" style="margin-bottom:6px"><span class="badge b-teal" style="font-size:11px">콘텐츠</span></div>
-    <div class="fl-title">Lotty Friends 동요 현지화 (10국)</div>
-    <div class="fl-desc">스페인어 동요 시리즈 10개국 동시 현지화 PM.</div>
+    <div class="proj-tags" style="margin-bottom:6px"><span class="badge b-teal" style="font-size:11px">유튜브 콘텐츠 현지화</span></div>
+    <div class="fl-title">Lotty Friends 동요 현지화 (10곡)</div>
+    <div class="fl-desc">스페인어 동요 시리즈 10곡 스페인어 현지화. 가사 현지화 및 가이드 녹음.</div>
   </div>
 </div>
 
@@ -344,42 +330,13 @@ a{color:inherit;text-decoration:none}
 <div class="sec-label">보유 스킬</div>
 <div class="skill-card">
   <div class="skill-grid">
-    <div class="skill-item"><div class="skill-dot" style="background:#1D9E75"></div>Lokalise · Trados · Smartcat</div>
     <div class="skill-item"><div class="skill-dot" style="background:#1D9E75"></div>TM / TB / 스타일 가이드 구축</div>
     <div class="skill-item"><div class="skill-dot" style="background:#378ADD"></div>스페인어 C2 (원어민 수준)</div>
     <div class="skill-item"><div class="skill-dot" style="background:#378ADD"></div>영어 비즈니스 레벨</div>
-    <div class="skill-item"><div class="skill-dot" style="background:#7F77DD"></div>콘텐츠 기획 · 음원·영상 기획</div>
-    <div class="skill-item"><div class="skill-dot" style="background:#7F77DD"></div>후시 녹음 디렉팅 · LQA</div>
-    <div class="skill-item"><div class="skill-dot" style="background:#BA7517"></div>AI 번역 프롬프트 설계</div>
-    <div class="skill-item"><div class="skill-dot" style="background:#BA7517"></div>Notion · Jira · Asana · Zapier</div>
+    <div class="skill-item"><div class="skill-dot" style="background:#BA7517"></div>Lokalise · Slack · Notion · Zapier · Asana</div>
   </div>
 </div>
 
-<!-- 경력 -->
-<div class="sec-label">경력</div>
-<div class="career-card">
-  <div class="career-row">
-    <div>
-      <div class="career-company">Devsisters</div>
-      <div class="career-role">현지화 프로젝트 매니저 & 팀 리더 · 7개 언어 인하우스 LPM</div>
-    </div>
-    <div class="career-period">2022.09 – 현재</div>
-  </div>
-  <div class="career-row">
-    <div>
-      <div class="career-company">더핑크퐁컴퍼니</div>
-      <div class="career-role">스페인어 유튜브 콘텐츠 기획 PM · 스페인어 현지화 매니저</div>
-    </div>
-    <div class="career-period">2019.01 – 2022.03</div>
-  </div>
-  <div class="career-row">
-    <div>
-      <div class="career-company">펠리스 스페인어 학원</div>
-      <div class="career-role">스페인어 강사</div>
-    </div>
-    <div class="career-period">2017.06 – 2018.12</div>
-  </div>
-</div>
 
 <!-- 자격증 -->
 <div class="sec-label">자격증</div>
