@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>오지혜 · Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;
+  --bg2:#f7f6f3;
+  --bg3:#efede9;
+  --text:#1a1a1a;
+  --text2:#666;
+  --text3:#999;
+  --border:#e8e6e1;
+  --teal-bg:#e1f5ee;--teal-text:#0f6e56;
+  --purple-bg:#eeedfe;--purple-text:#3c3489;
+  --blue-bg:#e6f1fb;--blue-text:#0c447c;
+  --amber-bg:#faeeda;--amber-text:#854f0b;
+  --coral-bg:#faece7;--coral-text:#993c1d;
+  --gray-bg:#f1efe8;--gray-text:#444441;
+  --green-bg:#eaf3de;--green-text:#3b6d11;
+  --radius:8px;
+  --radius-lg:12px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Pretendard',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:15px}
+a{color:inherit;text-decoration:none}
+.page{max-width:780px;margin:0 auto;padding:3rem 2rem 6rem}
+
+.header-card{background:var(--bg2);border-radius:var(--radius-lg);border:0.5px solid var(--border);padding:2rem 2rem 1.75rem;margin-bottom:2rem}
+.header-top{display:flex;align-items:center;gap:16px;margin-bottom:1rem}
+.avatar{width:52px;height:52px;border-radius:50%;background:var(--teal-bg);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:600;color:var(--teal-text);flex-shrink:0;letter-spacing:.02em}
+.name{font-size:22px;font-weight:600;margin-bottom:3px}
+.subtitle{font-size:13px;color:var(--text2)}
+.intro{font-size:13.5px;color:var(--text2);line-height:1.75;margin-bottom:1.25rem}
+.badges{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:1.25rem}
+.badge{display:inline-flex;align-items:center;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:500}
+.b-teal{background:var(--teal-bg);color:var(--teal-text)}
+.b-purple{background:var(--purple-bg);color:var(--purple-text)}
+.b-blue{background:var(--blue-bg);color:var(--blue-text)}
+.b-amber{background:var(--amber-bg);color:var(--amber-text)}
+.b-coral{background:var(--coral-bg);color:var(--coral-text)}
+.b-gray{background:var(--gray-bg);color:var(--gray-text)}
+.b-green{background:var(--green-bg);color:var(--green-text)}
+.contact{display:flex;gap:1.5rem;font-size:12.5px;color:var(--text3)}
+.contact a{color:var(--blue-text);transition:opacity .15s}
+.contact a:hover{opacity:.7}
+
+.sec-label{font-size:20px;font-weight:600;color:var(--text);letter-spacing:0;text-transform:none;margin-bottom:.875rem;margin-top:2.25rem}
+
+.career-card{background:var(--bg);border:0.5px solid var(--border);border-left:3px solid var(--teal-text);border-radius:var(--radius-lg);padding:1.125rem 1.5rem}
+.career-row{display:flex;justify-content:space-between;align-items:flex-start;padding:.75rem 0;border-bottom:0.5px solid var(--border)}
+.career-row:first-child{padding-top:0}
+.career-row:last-child{border-bottom:none;padding-bottom:0}
+.career-company{font-size:14px;font-weight:600;margin-bottom:3px}
+.career-role{font-size:12.5px;color:var(--text2)}
+.career-period{font-size:12px;color:var(--text3);text-align:right;white-space:nowrap;flex-shrink:0;margin-left:1rem}
+
+.metric-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.metric{background:var(--bg2);border-radius:var(--radius);border:0.5px solid var(--border);padding:.875rem 1rem}
+.metric-val{font-size:22px;font-weight:600;color:var(--text);margin-bottom:2px}
+.metric-lbl{font-size:11.5px;color:var(--text3)}
+
+.proj-grid{display:grid;grid-template-columns:1fr;gap:.875rem}
+.proj-card{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--radius-lg);padding:1.125rem 1.25rem;transition:box-shadow .2s}
+.proj-card:hover{box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.proj-tag{font-size:11.5px;color:var(--text3);margin-bottom:.5rem;display:flex;align-items:center;flex-wrap:wrap;gap:4px}
+.proj-title{font-size:14px;font-weight:600;margin-bottom:.5rem;line-height:1.4}
+.proj-desc{font-size:12.5px;color:var(--text2);line-height:1.65;margin-bottom:.75rem}
+.proj-results{list-style:none;margin-bottom:.75rem}
+.proj-results li{font-size:12.5px;color:var(--text);display:flex;gap:7px;align-items:flex-start;margin-bottom:4px;line-height:1.5}
+.proj-results li::before{content:'';width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:6px}
+.dot-teal::before{background:#888}
+.dot-blue::before{background:#888}
+.dot-purple::before{background:#888}
+.dot-coral::before{background:#888}
+.proj-tags{display:flex;flex-wrap:wrap;gap:4px}
+.b-outline{background:var(--bg2);color:var(--text2);border:0.5px solid var(--border)}
+
+.skill-card{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--radius-lg);padding:1.125rem 1.5rem}
+.skill-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem}
+.skill-item{font-size:13px;color:var(--text2);display:flex;align-items:center;gap:7px}
+.skill-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+
+.freelance-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem}
+.fl-card{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--radius-lg);padding:1rem 1.125rem}
+.fl-title{font-size:13px;font-weight:600;margin-bottom:4px;line-height:1.4}
+.fl-desc{font-size:12px;color:var(--text2);line-height:1.6}
+
+.timeline-banner{background:var(--bg2);border:0.5px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem 1.5rem;margin-bottom:.75rem}
+.tl-track{display:flex;flex-direction:column;gap:.5rem}
+.tl-row{display:flex;align-items:center;gap:10px;font-size:12.5px}
+.tl-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.tl-period{color:var(--text3);min-width:140px;flex-shrink:0}
+.tl-company{font-weight:600;min-width:130px}
+.tl-role{color:var(--text2)}
+.tl-line{width:1.5px;background:var(--border);height:18px;margin-left:4px}
+
+.cert-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem}
+.cert-card{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--radius-lg);padding:.875rem 1rem}
+.cert-year{font-size:11px;color:var(--text3);margin-bottom:3px}
+.cert-name{font-size:13px;font-weight:600}
+
+@media(max-width:600px){
+  .proj-grid{grid-template-columns:1fr}
+  .metric-grid{grid-template-columns:repeat(2,1fr)}
+  .freelance-grid{grid-template-columns:1fr}
+  .cert-grid{grid-template-columns:repeat(2,1fr)}
+  .page{padding:2rem 1.25rem 4rem}
+}
+</style>
+<meta property="og:title" content="오지혜 · Localization PM Portfolio">
+<meta property="og:description" content="7년간 미디어·게임 분야 현지화 PM">
+</head>
+<body>
+<div class="page">
+
+<!-- 헤더 -->
+<div class="header-card">
+  <div class="header-top">
+    <img src="profile.jpg" style="width:52px;height:52px;border-radius:100%;object-fit:cover;object-position:center 5%;flex-shrink:0">
+    <div>
+      <div class="name">오지혜 · Jihye Oh</div>
+      <div class="subtitle">Localization PM · Content Production · Spanish Specialist</div>
+    </div>
+  </div>
+  <div class="intro">
+    콘텐츠 제작 PM으로 시작하여 미디어·게임 분야에서 스페인어 현지화를 수행해왔습니다. 현재는 7개 언어의 LPM으로서 퀄리티 유지를 위한 리소스 및 일정 관리를 하고 사내 AI 번역 툴 개발 프로젝트에 적극적으로 참여하는 등 프로세스 효율화를 연구하는 PM입니다.
+  </div>
+  <div class="badges">
+    <span class="badge b-purple">7개 언어 LPM</span>
+    <span class="badge b-teal">음원·영상·게임 현지화</span>
+    <span class="badge b-coral">AI 번역 워크플로우 도입</span>
+    <span class="badge b-blue">콘텐츠 제작 PM</span>
+    <span class="badge b-amber">스페인어</span>
+    <span class="badge b-green">현지화팀 리드</span>
+  </div>
+  <div class="contact">
+    <a href="mailto:ggmade1224@gmail.com">ggmade1224@gmail.com</a>
+    <a href="tel:010-2241-1144">010-2241-1144</a>
+  </div>
+</div>
+
+  <!-- 학력 -->
+<div class="sec-label">학력</div>
+<div class="career-card">
+  <div class="career-row">
+    <div>
+      <div class="career-company">I.E.S Santa Teresa de Jesús</div>
+      <div class="career-role">중학교 · 고등학교 졸업</div>
+    </div>
+    <div class="career-period">2005 – 2010</div>
+  </div>
+  <div class="career-row">
+    <div>
+      <div class="career-company">Universidad Politécnica de Madrid</div>
+      <div class="career-role">토목공학 전공 / 세부전공: 도시 및 교통 계획</div>
+    </div>
+    <div class="career-period">2011 – 2016</div>
+  </div>
+</div>
+
+<!-- 활동 -->
+<div class="sec-label">활동</div>
+<div class="career-card">
+  <div class="career-row">
+    <div>
+      <div class="career-company">스페인 마드리드 해외 연수</div>
+    </div>
+    <div class="career-period">2005 – 2016</div>
+  </div>
+  <div class="career-row">
+    <div>
+      <div class="career-company">한양대학교 교환학생</div>
+    </div>
+    <div class="career-period">2014 – 2015</div>
+  </div>
+  <div class="career-row">
+    <div>
+      <div class="career-company">교육자를 위한 스페인어 B레벨 문법 교육 코스</div>
+      <div class="career-role">Instituto Cervantes (한국)</div>
+    </div>
+    <div class="career-period">2018.01</div>
+  </div>
+</div>
+  
+<!-- 커리어 타임라인 -->
+<div class="sec-label">경력 타임라인</div>
+<div class="timeline-banner">
+  <div class="tl-track">
+    <div class="tl-row">
+      <div class="tl-dot" style="background:#888"></div>
+      <div class="tl-period">2017 – 2018 (1년 7개월)</div>
+      <div class="tl-company">펠리스 스페인어 학원</div>
+      <div class="tl-role">스페인어 강사</div>
+    </div>
+    <div style="display:flex"><div style="width:4px"></div><div class="tl-line"></div></div>
+    <div class="tl-row">
+      <div class="tl-dot" style="background:#1D9E75"></div>
+      <div class="tl-period">2019 – 2022 (3년 3개월)</div>
+      <div class="tl-company">더핑크퐁컴퍼니</div>
+      <div class="tl-role">콘텐츠 제작 PM · 스페인어 현지화 매니저</div>
+    </div>
+    <div style="display:flex"><div style="width:4px"></div><div class="tl-line"></div></div>
+    <div class="tl-row">
+      <div class="tl-dot" style="background:#7F77DD"></div>
+      <div class="tl-period">2022 – 현재 (3년+)</div>
+      <div class="tl-company">데브시스터즈</div>
+      <div class="tl-role">인하우스 게임 현지화 PM · 그룹장</div>
+    </div>
+    <div style="display:flex"><div style="width:4px"></div><div class="tl-line"></div></div>
+    <div class="tl-row">
+      <div class="tl-dot" style="background:#1D9E75;border:2px solid #0F6E56"></div>
+      <div class="tl-period" style="color:#0F6E56;font-weight:600">현재</div>
+      <div class="tl-company" style="color:#0F6E56">새로운 기회 탐색 중</div>
+      <div class="tl-role">현지화 전문성을 기반으로 새로운 분야로 확장 희망</div>
+    </div>
+  </div>
+</div>
+
+<!-- 핵심 성과 -->
+<div class="sec-label">핵심 경력</div>
+<div class="metric-grid">
+  <div class="metric"><div class="metric-val">7년+</div><div class="metric-lbl">현지화 총 경력</div></div>
+  <div class="metric"><div class="metric-val">7개</div><div class="metric-lbl">인하우스 관리 언어</div></div>
+  <div class="metric"><div class="metric-val">5종+</div><div class="metric-lbl">현지화 지원중인 게임 타이틀</div></div>
+  <div class="metric"><div class="metric-val">700편+</div><div class="metric-lbl">콘텐츠 현지화 작업량</div></div>
+</div>
+
+<!-- 프로젝트 -->
+<div class="sec-label">성과 상세</div>
+<div class="proj-grid">
+
+  <div class="proj-card">
+    <div class="proj-tag">
+      <span class="badge b-purple" style="font-size:11px">인하우스 LPM</span>
+      데브시스터즈 · 2022–현재
+    </div>
+    <div class="proj-title">7개 언어 인하우스 번역팀 운영 + AI 번역 도입</div>
+    <div class="proj-desc">관리 언어: 영어·일본어·중국어(번체)·태국어·스페인어·프랑스어·독일어<br>사내 AI 번역 툴 TF 현지화 PM으로 인력 중심 공정을 AI 워크플로우로 전환</div>
+    <ul class="proj-results">
+      <li class="dot-purple">2티어 언어의 운영 효율화: 2인 1제품 → 1인 2제품 체제 전환</li>
+      <li class="dot-purple">AI 프롬프트·Post-processing 로직 설계에 참여 및 스페인어 QA 기준 수립</li>
+    </ul>
+    <div class="proj-tags">
+      <span class="badge b-outline" style="font-size:11px">작업량 관리</span>
+      <span class="badge b-outline" style="font-size:11px">워크플로우 개선</span>
+      <span class="badge b-outline" style="font-size:11px">외주 번역사 관리</span>
+      <span class="badge b-outline" style="font-size:11px">AI 번역 개선</span>
+      <span class="badge b-outline" style="font-size:11px">조직 관리</span>
+    </div>
+  </div>
+  
+  <div class="proj-card">
+    <div class="proj-tag">
+      <span class="badge b-coral" style="font-size:11px">게임 스페인어 현지화</span>
+      데브시스터즈 · 2022–현재
+    </div>
+    <div class="proj-title">쿠키런: 킹덤 스페인어 현지화 — 20만 단어 · 커뮤니티 바이럴</div>
+    <div class="proj-desc">한글→스페인어 현지화 및 LQA 수행, 캐릭터 특성을 살린 번역으로 스페인어권·영미권 커뮤니티 바이럴 달성</div>
+    <ul class="proj-results">
+      <li class="dot-blue">총 20만 단어 번역, 용어집·스타일 가이드 신규 수립</li>
+      <li class="dot-blue">캐릭터 이름의 유쾌한 현지화를 통해 업데이트 당시 스페인어권 커뮤니티 최다 바이럴</li>
+    </ul>
+    <div class="proj-tags">
+      <span class="badge b-outline" style="font-size:11px">게임 현지화</span>
+      <span class="badge b-outline" style="font-size:11px">LQA</span>
+      <span class="badge b-outline" style="font-size:11px">용어집 및 스타일 가이드</span>
+    </div>
+  </div>
+
+  <div class="proj-card">
+    <div class="proj-tag">
+      <span class="badge b-teal" style="font-size:11px">미디어 스페인어 현지화</span>
+      더핑크퐁컴퍼니 · 2019–2022
+    </div>
+    <div class="proj-title">스페인어 채널 성장 — 구독자 200만 → 1,000만</div>
+    <div class="proj-desc">한글 및 영어 콘텐츠를 스페인어로 현지화, 음원 및 영상 현지화 PM</div>
+    <ul class="proj-results">
+      <li class="dot-teal">3년 만에 구독자 5배 성장</li>
+      <li class="dot-teal">Samsung TV PLUS 멕시코 Baby Shark 채널 런칭에 기여 — 오픈 1달만에 키즈 카테고리 2위</li>
+    </ul>
+    <div class="proj-tags">
+      <span class="badge b-outline" style="font-size:11px">동요·동화 현지화</span>
+      <span class="badge b-outline" style="font-size:11px">성우 녹음 디렉팅</span>
+      <span class="badge b-outline" style="font-size:11px">가이드 녹음</span>
+    </div>
+  </div>
+ 
+<div class="proj-card">
+    <div class="proj-tag">
+      <span class="badge b-blue" style="font-size:11px">콘텐츠 기획 PM</span>
+      더핑크퐁컴퍼니 · 2019–2022
+    </div>
+    <div class="proj-title">스페인어 오리지널 동요 시리즈 기획</div>
+    <div class="proj-desc">음원 및 영상 기획<br> 시장조사부터 스튜디오 선정, 성우 캐스팅, 녹음 디렉팅, 음원 피드백, 영상 기획, 포스트 프로덕션까지 전 과정 PM</div>
+    <ul class="proj-results">
+      <li class="dot-teal">대표 영상 8천만, 시리즈 합산 조회수 2억 6천만</li>
+      <li class="dot-teal">경쟁사 벤치마킹 사례로 업계 확산</li>
+    </ul>
+    <div class="proj-tags">
+      <span class="badge b-outline" style="font-size:11px">음원 기획</span>
+      <span class="badge b-outline" style="font-size:11px">영상 기획</span>
+      <span class="badge b-outline" style="font-size:11px">실사 촬영</span>
+    </div>
+  <details style="margin-top:.75rem;border-top:0.5px solid var(--border);padding-top:.75rem">
+  <summary style="font-size:12.5px;font-weight:600;color:var(--text2);cursor:pointer;list-style:none;display:flex;align-items:center;gap:6px">
+    ▶ 주요 작업 콘텐츠 바로가기
+  </summary>
+  <div style="margin-top:.875rem;display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem">
+
+    <a href="https://www.youtube.com/watch?v=NxunrkQetbA" target="_blank" style="display:block;border-radius:var(--radius);overflow:hidden;border:0.5px solid var(--border)">
+      <img src="https://img.youtube.com/vi/NxunrkQetbA/hqdefault.jpg" style="width:100%;display:block">
+      <div style="padding:6px 8px;font-size:9px;color:var(--text2)">Chumbala Cachumbala</div>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=XmW_LMPfib8&list=PL7KQxu8CqMCev1Uvaf9J5cakKOJRSzEx1&index=1" target="_blank" style="display:block;border-radius:var(--radius);overflow:hidden;border:0.5px solid var(--border)">
+      <img src="https://img.youtube.com/vi/XmW_LMPfib8/hqdefault.jpg" style="width:100%;display:block">
+      <div style="padding:6px 8px;font-size:9px;color:var(--text2)">스페인어 오리지널 동요 시리즈 10편</div>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=gsw-de5xcCU" target="_blank" style="display:block;border-radius:var(--radius);overflow:hidden;border:0.5px solid var(--border)">
+      <img src="https://img.youtube.com/vi/gsw-de5xcCU/hqdefault.jpg" style="width:100%;display:block">
+      <div style="padding:6px 8px;font-size:9px;color:var(--text2)">Luis Fonsi 콜라보</div>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=Pd3Zq_wtIvM&list=PLQiKLJnked44Hof1XqeTVnyAcUeHc34SK" target="_blank" style="display:block;border-radius:var(--radius);overflow:hidden;border:0.5px solid var(--border)">
+      <img src="https://img.youtube.com/vi/Pd3Zq_wtIvM/hqdefault.jpg" style="width:100%;display:block">
+      <div style="padding:6px 8px;font-size:9px;color:var(--text2)">코로나19 손씻기 송 (WHO 콜라보)</div>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=23vmZ-r2RaY" target="_blank" style="display:block;border-radius:var(--radius);overflow:hidden;border:0.5px solid var(--border)">
+      <img src="https://img.youtube.com/vi/23vmZ-r2RaY/hqdefault.jpg" style="width:100%;display:block">
+      <div style="padding:6px 8px;font-size:9px;color:var(--text2)">크리스마스 율동 동요</div>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=t1tXbnzjj-Y" target="_blank" style="display:block;border-radius:var(--radius);overflow:hidden;border:0.5px solid var(--border)">
+      <img src="https://img.youtube.com/vi/t1tXbnzjj-Y/hqdefault.jpg" style="width:100%;display:block">
+      <div style="padding:6px 8px;font-size:9px;color:var(--text2)">실사 동요 (with 대니 구)</div>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=VNaygMwz8gk" target="_blank" style="display:block;border-radius:var(--radius);overflow:hidden;border:0.5px solid var(--border)">
+      <img src="https://img.youtube.com/vi/VNaygMwz8gk/hqdefault.jpg" style="width:100%;display:block">
+      <div style="padding:6px 8px;font-size:9px;color:var(--text2)">아기상어 애니메이션 시리즈 12편</div>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=ikq8vzJKx10" target="_blank" style="display:block;border-radius:var(--radius);overflow:hidden;border:0.5px solid var(--border)">
+      <img src="https://img.youtube.com/vi/ikq8vzJKx10/hqdefault.jpg" style="width:100%;display:block">
+      <div style="padding:6px 8px;font-size:9px;color:var(--text2)">핑크퐁 예능 시리즈 6편</div>
+    </a>
+    
+  </div>
+</details>
+  </div>
+  
+<!-- 프리랜서 -->
+<div class="sec-label">프리랜서 경력</div>
+<div class="freelance-grid">
+  <div class="fl-card">
+    <div class="proj-tags" style="margin-bottom:6px"><span class="badge b-coral" style="font-size:11px">Netflix</span></div>
+    <div class="fl-title">수리남 후시 녹음 디렉팅</div>
+    <div class="fl-desc">넷플릭스 오리지널 드라마 스페인어 후시 녹음 디렉팅, 립싱크·자막 타이밍 검수</div>
+  </div>
+  <div class="fl-card">
+    <div class="proj-tags" style="margin-bottom:6px"><span class="badge b-blue" style="font-size:11px">Disney+</span></div>
+    <div class="fl-title">나인퍼즐 후시 녹음 디렉팅</div>
+    <div class="fl-desc">디즈니+ 오리지널 드라마 스페인어 후시 녹음 디렉팅, 가이드 녹음, 연기자 티칭</div>
+  </div>
+  <div class="fl-card">
+    <div class="proj-tags" style="margin-bottom:6px"><span class="badge b-teal" style="font-size:11px">유튜브 콘텐츠</span></div>
+    <div class="fl-title">Lotty Friends 동요 현지화 (10곡)</div>
+    <div class="fl-desc">스페인어 동요 시리즈 10곡 스페인어 현지화, 가사 현지화 및 가이드 녹음</div>
+  </div>
+</div>
+
+<!-- 일하는 방식 -->
+<div class="sec-label">이렇게 일합니다</div>
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.875rem">
+
+  <div class="proj-card" style="text-align:center">
+    <div style="margin-bottom:.75rem;display:flex;justify-content:center">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1D9E75" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+      </svg>
+    </div>
+    <div style="font-size:13px;font-weight:600;margin-bottom:.625rem">핵심 가치를 보존하는 효율화</div>
+    <div style="font-size:12px;color:var(--text2);line-height:1.7">워크플로우 내의 구조적 이슈를 찾아내고 효율적인 해결책을 모색합니다. 다만, 이 과정에서 포기할 수 없는 핵심 가치를 파악하여 놓치지 않도록 경계합니다.</div>
+  </div>
+
+  <div class="proj-card" style="text-align:center">
+    <div style="margin-bottom:.75rem;display:flex;justify-content:center">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7F77DD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+      </svg>
+    </div>
+    <div style="font-size:13px;font-weight:600;margin-bottom:.625rem">경계를 허무는 공감형 커뮤니케이터</div>
+    <div style="font-size:12px;color:var(--text2);line-height:1.7">기획부터 현지화까지 아우르는 경험으로 개발과 비개발 부서 사이의 가교가 됩니다. 각 직군의 고충을 깊이 이해하며 최선의 밸런스를 찾습니다.</div>
+  </div>
+
+  <div class="proj-card" style="text-align:center">
+    <div style="margin-bottom:.75rem;display:flex;justify-content:center">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#0C447C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+      </svg>
+    </div>
+    <div style="font-size:13px;font-weight:600;margin-bottom:.625rem">데이터 기반의 기획자 & 링귀스트</div>
+    <div style="font-size:12px;color:var(--text2);line-height:1.7">데이터 분석을 통해 시장의 니즈를 파악하고 콘텐츠 및 언어적 방향을 설계합니다. 한국·스페인 문화권의 깊은 이해를 바탕으로 언어의 뉘앙스를 살립니다.</div>
+  </div>
+
+</div>
+  
+<!-- 보유 스킬 -->
+<div class="sec-label">보유 스킬</div>
+<div class="skill-card">
+  <div class="skill-grid" style="grid-template-columns:1fr">
+    <div class="skill-item"><div class="skill-dot" style="background:#1D9E75"></div>TM / TB / 스타일 가이드 구축</div>
+    <div class="skill-item"><div class="skill-dot" style="background:#378ADD"></div>스페인어 — 원어민 수준</div>
+    <div class="skill-item"><div class="skill-dot" style="background:#D4537E"></div>영어 — 지면 업무 & 일상 회화 가능</div>
+    <div class="skill-item"><div class="skill-dot" style="background:#BA7517"></div>Lokalise · Slack · Notion · Zapier · Asana · Figma</div>
+  </div>
+</div>
+
+<!-- 자격증 -->
+<div class="sec-label">자격증</div>
+<div class="cert-grid">
+  <div class="cert-card">
+    <div class="cert-year">2016.11</div>
+    <div class="cert-name">DELE C2</div>
+  </div>
+  <div class="cert-card">
+    <div class="cert-year">2018.08</div>
+    <div class="cert-name">SNULT 스페인어 1급</div>
+  </div>
+  <div class="cert-card">
+    <div class="cert-year">2018.09</div>
+    <div class="cert-name">FLEX 스페인어 1A급</div>
+  </div>
+</div>
+
+</div>
+</body>
+</html>
